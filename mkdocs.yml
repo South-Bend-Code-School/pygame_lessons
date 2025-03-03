@@ -1,0 +1,55 @@
+site_name: Python Game Development
+site_description: A guide to learning Pygame through interactive lessons and projects.
+site_author: South Bend Code School
+
+theme: 
+  name: material
+  
+  palette:
+    scheme: default
+  logo: assets/logo.png
+  favicon: assets/logo.png
+  font: 
+    text: Roboto
+    code: Roboto Mono
+
+nav:
+  - Home: index.md
+  - Mini Lessons:
+    - Drawing Shapes: 01-Drawing-Shapes/draw_shapes.md
+    - Handling Keyboard Input: 02-Handling-Keyboard-Input/keyboard_input.md
+    - Colors: 03-Colors/colors.md
+    - Handling Mouse Input: 04-Handling-Mouse-Input/mouse_input.md
+    - Sound Effects: 05-Sound Effects/todo.md
+    - Background Music: 06-Background Music/todo.md
+    - Displaying Images: 07-Displaying-Images/todo.md
+    - Animating Sprites: 08-Animating-Sprites/todo.md
+    - Basic Collision Detection: 09-Basic-Collision-Detection/todo.md
+    - Player Class: 09-Player-Class/todo.md
+    - Enemy Class: 10-Enemy-Class/todo.md
+    - Frame Rate Independence: 11-Frame Rate Independence/framerate_indpendence.md
+    - Scrolling Background: 12-Scrolling-Background/assets/todo.md
+  - Full Game Examples:
+    - Breakout: full-game-examples/Breakout/todo.md
+    - Flappy Bird: full-game-examples/Flappy-Bird/todo.md
+    - Pong: full-game-examples/Pong/todo.md
+    - Snake: full-game-examples/Snake/todo.md
+  - Install Python:
+    - Introduction: 00-Setup/README_test_pygame.md
+    - Test Pygame: 00-Setup/test_pygame.py
+
+plugins:
+  - search
+
+markdown_extensions:
+  - attr_list  # Required for Material button styling to work
+  - toc:
+      permalink: true
+  - codehilite
+  - pymdownx.highlight
+  - pymdownx.inlinehilite
+  - pymdownx.superfences
+
+extra:
+  include:
+    - "**/*.py"

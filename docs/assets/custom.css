@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;700&family=Futura&display=swap');
+
+:root {
+    --primary-color: #FF9B20; /* Orange */
+    --secondary-color: #B337FF; /* Purple */
+    --tertiary-color: #E2FE4E; /* Green */
+    --success-color: #E2FE4E; /* Green */
+    --warning-color: #FF9B20; /* Orange */
+    --danger-color: #B337FF; /* Purple */
+    --info-color: #3F334D; /* Dark Purple */
+    --light-color: #E2FE4E; /* Green */
+    --dark-color: #3F334D; /* Dark Purple */
+
+    --background-color: #FFFFFF; /* White */
+    --foreground-color: #131619; /* Black */
+
+    --font-base: 'Manrope', sans-serif;
+    --font-headings: 'Futura', sans-serif;
+}
+
+/* Apply background & text colors */
+body {
+    background-color: var(--background-color);
+    color: var(--foreground-color);
+    font-family: var(--font-base);
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-headings);
+}
+
+/* Navbar Colors */
+.md-header {
+    background-color: var(--primary-color);
+}
+
+.md-nav__link {
+    color: var(--dark-color);
+}
+
+.md-nav__link:hover {
+    color: var(--secondary-color);
+}
+
+/* Buttons */
+button, .md-button {
+    background-color: var(--primary-color);
+    color: var(--foreground-color);
+}
+
+button:hover, .md-button:hover {
+    background-color: var(--secondary-color);
+}

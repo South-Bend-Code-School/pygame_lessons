@@ -1,5 +1,9 @@
 # Drawing Shapes in Pygame
 
+<a href="../draw_shapes.py" download class="md-button md-button--primary">
+    ⬇ Download draw_shapes.py
+</a>
+
 ## Understanding Coordinates in Pygame
 In Pygame, every object is placed using **coordinates**. A coordinate is a pair of numbers **(x, y)** that tells us where something is on the screen.
 

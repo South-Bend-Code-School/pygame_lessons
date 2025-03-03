@@ -2,6 +2,9 @@
 
 This folder contains instructions on how to install Pygame and test if everything is working correctly.
 
+[Download test_pygame.py](test_pygame.py)
+
+
 ## Installing Pygame
 ### **Windows Users**
 If you are using Windows, you should use the `py` command to ensure you install Pygame for the correct Python version:
