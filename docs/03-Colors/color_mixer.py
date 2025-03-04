@@ -10,8 +10,8 @@ pygame.display.set_caption("RGB Color Mixer")
 
 # Define initial RGB values
 red = 255
-green = 100
-blue = 50
+green = 155
+blue = 32
 
 # Define circle radius
 CIRCLE_RADIUS = 60

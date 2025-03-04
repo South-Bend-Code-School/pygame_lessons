@@ -9,13 +9,16 @@ SCREEN = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
 pygame.display.set_caption("Keyboard Input Example")
 
 # Define colors
-WHITE = (255, 255, 255)
-BLUE = (0, 0, 255)
-BLACK = (0, 0, 0)
-GRAY = (200, 200, 200)
+PURPLE = (179, 55, 255)
+ORANGE = (255, 155, 32)
+BLACK = (19, 22, 25)
+LIGHTGREY = (236, 239, 242)
+
+
 
 # Define font
 font = pygame.font.SysFont("Arial", 10, bold=True)  # Decreased font size
+font_instructions = pygame.font.SysFont("Arial", 20, bold=True)  # Decreased font size
 
 # Define player properties
 player_size = 50
@@ -26,9 +29,9 @@ player_speed = 5
 def draw_grid():
     """Draws a grid on the background."""
     for x in range(0, SCREEN_WIDTH, 50):
-        pygame.draw.line(SCREEN, GRAY, (x, 0), (x, SCREEN_HEIGHT))
+        pygame.draw.line(SCREEN, LIGHTGREY, (x, 0), (x, SCREEN_HEIGHT))
     for y in range(0, SCREEN_HEIGHT, 50):
-        pygame.draw.line(SCREEN, GRAY, (0, y), (SCREEN_WIDTH, y))
+        pygame.draw.line(SCREEN, LIGHTGREY, (0, y), (SCREEN_WIDTH, y))
 
 # Main loop
 running = True
@@ -66,22 +69,24 @@ while running:
     player_y = max(0, min(SCREEN_HEIGHT - player_size, player_y))
 
     # Drawing everything
-    SCREEN.fill(WHITE)  # Clear screen
+    SCREEN.fill(BLACK)  # Clear screen
     draw_grid()  # Draw grid
-    pygame.draw.rect(SCREEN, BLUE, (player_x, player_y, player_size, player_size))  # Draw player
+    pygame.draw.rect(SCREEN, ORANGE, (player_x, player_y, player_size, player_size))  # Draw player
 
     # Display instructions
-    instructions = font.render("Use arrow keys to move the square | + / - to adjust speed", True, BLACK)
+    instructions = font_instructions.render("Use arrow keys to move the square", True, LIGHTGREY)
     SCREEN.blit(instructions, (SCREEN_WIDTH // 2 - instructions.get_width() // 2, 20))
-    
+    instructions = font_instructions.render("Use + / - to adjust movement speed", True, LIGHTGREY)
+    SCREEN.blit(instructions, (SCREEN_WIDTH // 2 - instructions.get_width() // 2, 50))
+
     # Display player coordinates centered in the square
-    coord_text = font.render(f"({player_x}, {player_y})", True, WHITE)
+    coord_text = font.render(f"({player_x}, {player_y})", True, BLACK)
     coord_rect = coord_text.get_rect()
     coord_rect.center = (player_x + player_size // 2, player_y + player_size // 2)
     SCREEN.blit(coord_text, coord_rect.topleft)
 
     # Display player speed on the screen
-    speed_text = font.render(f"Speed: {player_speed}", True, BLACK)
+    speed_text = font_instructions.render(f"Speed: {player_speed}", True, LIGHTGREY)
     SCREEN.blit(speed_text, (20, SCREEN_HEIGHT - 40))
 
     pygame.display.update()  # Update display

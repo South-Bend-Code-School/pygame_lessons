@@ -20,15 +20,15 @@ nav:
     - Handling Keyboard Input: 02-Handling-Keyboard-Input/keyboard_input.md
     - Colors: 03-Colors/colors.md
     - Handling Mouse Input: 04-Handling-Mouse-Input/mouse_input.md
-    - Sound Effects: 05-Sound Effects/todo.md
-    - Background Music: 06-Background Music/todo.md
+    - Sound Effects: 05-Sound-Effects/todo.md
+    - Background Music: 06-Background-Music/todo.md
     - Displaying Images: 07-Displaying-Images/todo.md
     - Animating Sprites: 08-Animating-Sprites/todo.md
     - Basic Collision Detection: 09-Basic-Collision-Detection/todo.md
-    - Player Class: 09-Player-Class/todo.md
+    - Player Class: 11-Player-Class/todo.md
     - Enemy Class: 10-Enemy-Class/todo.md
-    - Frame Rate Independence: 11-Frame Rate Independence/framerate_indpendence.md
-    - Scrolling Background: 12-Scrolling-Background/assets/todo.md
+    - Frame Rate Independence: 12-Frame Rate Independence/framerate_indpendence.md
+    - Scrolling Background: 13-Scrolling-Background/assets/todo.md
   - Full Game Examples:
     - Breakout: full-game-examples/Breakout/todo.md
     - Flappy Bird: full-game-examples/Flappy-Bird/todo.md
@@ -48,8 +48,10 @@ markdown_extensions:
   - codehilite
   - pymdownx.highlight
   - pymdownx.inlinehilite
+  - admonition
+  - pymdownx.details
   - pymdownx.superfences
-
+  
 extra:
   include:
     - "**/*.py"
