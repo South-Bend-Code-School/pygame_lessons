@@ -3,7 +3,7 @@
 <div style="display: flex; justify-content: center; align-items: center; margin-bottom: 20px;">
     <!-- Download Button -->
     <div>
-        <a href="../framerate_independence.py" download class="md-button md-button--primary">
+        <a href="../framerate_indpendence.py" download class="md-button md-button--primary">
             ⬇ Download framerate_independence.py
         </a>
     </div> 
