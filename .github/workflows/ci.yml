@@ -36,7 +36,7 @@ jobs:
           for folder in docs/full-game-examples/*; do
             if [ -d "$folder" ]; then
               game_name=$(basename "$folder")
-              (cd "$folder" && zip -r "../../dist/$game_name.zip" .)
+              zip -r "dist/$game_name.zip" "$folder"/*
             fi
           done
 
