@@ -20,19 +20,24 @@ nav:
     - Starter Game Template: getting-started/01-Starter-Game-Template/starter_game_template.md
   - Mini Lessons:
     - Pygame:
-      - Drawing Shapes: pygame/01-Drawing-Shapes/draw_shapes.md
-      - Handling Keyboard Input: pygame/02-Handling-Keyboard-Input/keyboard_input.md
-      - Colors: pygame/03-Colors/colors.md
-      - Handling Mouse Input: pygame/04-Handling-Mouse-Input/mouse_input.md
-      - Sound Effects: pygame/05-Sound-Effects/todo.md
-      - Background Music: pygame/06-Background-Music/todo.md
-      - Displaying Images: pygame/07-Displaying-Images/todo.md
-      - Animating Sprites: pygame/08-Animating-Sprites/todo.md
-      - Basic Collision Detection: pygame/09-Basic-Collision-Detection/todo.md
-      - Player Class: pygame/11-Player-Class/todo.md
-      - Enemy Class: pygame/10-Enemy-Class/todo.md
-      - Frame Rate Independence: pygame/12-Frame Rate Independence/framerate_indpendence.md
-      - Scrolling Background: pygame/13-Scrolling-Background/assets/todo.md
+      - Drawing Shapes: pygame/drawing-shapes/draw_shapes.md
+      - Keyboard Input: pygame/keyboard-input/keyboard_input.md
+      - Colors: pygame/colors/colors.md
+      - Handling Mouse Input: pygame/mouse-input/mouse_input.md
+      - Sound Effects: pygame/sound-effects/coming_soon.md
+      - Background Music: pygame/background-music/coming_soon.md
+      - Displaying Images: pygame/images/coming_soon.md
+      - Animating Sprites: pygame/animated-sprites/animated_sprites.md
+      - Player Class: pygame/player-class/coming_soon.md
+      - Item Class: pygame/item-class/coming_soon.md
+      - Enemy Class: pygame/enemy-class/coming_soon.md
+      - Collision Detection: pygame/collision-detection/coming_soon.md
+      - Frame Independent Movement: pygame/framerate_independence/framerate_independence.md
+      - Parallax Scrolling: pygame/parallax-scrolling/coming_soon.md
+      - Full Screen: pygame/full-screen/coming_soon.md
+      - Physics: pygame/physics/coming_soon.md
+      - Particles: pygame/particles/coming_soon.md
+      - Publish on itch.io: pygame/publish-itch/coming_soon.md
     - Python:
       - Coming Soon: python/p01-Indendation/indendation.md
   - Student Challenges:
