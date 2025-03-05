@@ -29,10 +29,8 @@ nav:
       - Displaying Images: pygame/images/coming_soon.md
       - Animating Sprites: pygame/animated-sprites/animated_sprites.md
       - Player Class: pygame/player-class/coming_soon.md
-      - Item Class: pygame/item-class/coming_soon.md
-      - Enemy Class: pygame/enemy-class/coming_soon.md
       - Collision Detection: pygame/collision-detection/coming_soon.md
-      - Frame Independent Movement: pygame/framerate_independence/framerate_independence.md
+      - Frame Independent Movement: pygame/framerate-independence/framerate_independence.md
       - Parallax Scrolling: pygame/parallax-scrolling/coming_soon.md
       - Full Screen: pygame/full-screen/coming_soon.md
       - Physics: pygame/physics/coming_soon.md
