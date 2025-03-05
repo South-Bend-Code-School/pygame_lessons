@@ -38,11 +38,11 @@ nav:
   - Student Challenges:
     - One Button Game: challeges/one-button-game/one_button.md
   - Full Game Examples:
-    - Breakout: full-game-examples/breakout/coming_soon.md
-    - Flappy Bird: full-game-examples/flappy-bird/coming_soon.md
-    - Pong: full-game-examples/pong/coming_soon.md
-    - Snake: full-game-examples/snake/coming_soon.md
-    - Barnacle Briggs: full-game-examples/the-curse-of-barnacle-briggs/barnacle-briggs.md
+    - Breakout: full-game-examples/breakout-game/coming_soon.md
+    - Flappy Bird: full-game-examples/flappy-bird-game/coming_soon.md
+    - Pong: full-game-examples/pong-game/coming_soon.md
+    - Snake: full-game-examples/snake-game/coming_soon.md
+    - Barnacle Briggs: full-game-examples/curse-of-barnacle-briggs/barnacle-briggs.md
 
 plugins:
   - search
