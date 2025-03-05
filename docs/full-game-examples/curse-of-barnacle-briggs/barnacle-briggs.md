@@ -4,6 +4,13 @@
 
 ![The Curse of Barnacle Briggs](title_screen.jpeg){height=200px}
 
+<!-- Download Button -->
+<div class="button-container">
+    <a href="https://github.com/South-Bend-Code-School/pygame_lessons/releases/download/curse-of-barnacle-briggs/curse-of-barnacle-briggs.zip" download class="md-button md-button--primary">
+        ⬇ Download Game Source Code
+    </a>
+</div>
+
 Ahoy, mate! I be Captain Barnacle Briggs, the only poor soul left from the crew of the Black Squall, and I’ve come to beg fer yer forgiveness—and yer help. We were a wicked lot, pillagin’ treasures that weren’t ours, and our greed sealed our doom. 
 
 Among the gold and gems we plundered was the Emerald Heart, a jewel green as the sea and large as a boulder. What we didn’t know was that the heart wasn’t just treasure—it was the very soul of yer island. The storm that tore our ship apart was no natural gale but the wrath o’ the cursed heart itself, draggin’ us to the bottom of the sea. The rest o’ me crew lies as bones scattered on the ocean floor, and me? I’m doomed to haunt these shores till the curse is lifted.
