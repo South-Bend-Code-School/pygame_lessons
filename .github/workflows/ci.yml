@@ -33,10 +33,10 @@ jobs:
       - name: Create ZIP files
         run: |
           mkdir -p dist
-          for folder in docs/full-game-examples/*; do
+          for folder in docs/full-game-examples/* docs/pygame/*; do
             if [ -d "$folder" ]; then
               game_name=$(basename "$folder")
-              zip -r "dist/$game_name.zip" "$folder"/*
+              (cd docs/full-game-examples && zip -r "../../dist/$game_name.zip" "$game_name")
             fi
           done
 
