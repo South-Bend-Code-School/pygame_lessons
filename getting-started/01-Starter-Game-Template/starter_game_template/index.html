@@ -1,0 +1,1451 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="A guide to learning Pygame through interactive lessons and projects.">
+      
+      
+        <meta name="author" content="South Bend Code School">
+      
+      
+      
+        <link rel="prev" href="../../00-Installation/Installation/">
+      
+      
+        <link rel="next" href="../../../game-design/coming_soon/">
+      
+      
+      <link rel="icon" href="../../../assets/logo.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.7">
+    
+    
+      
+        <title>Starter Game Template - Python Game Development</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.8608ea7d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#download-the-game-starter-code" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="Python Game Development" class="md-header__button md-logo" aria-label="Python Game Development" data-md-component="logo">
+      
+  <img src="../../../assets/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Python Game Development
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Starter Game Template
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Python Game Development" class="md-nav__button md-logo" aria-label="Python Game Development" data-md-component="logo">
+      
+  <img src="../../../assets/logo.png" alt="logo">
+
+    </a>
+    Python Game Development
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Getting Started
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Getting Started
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../00-Installation/Installation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Installation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Starter Game Template
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Starter Game Template
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#download-the-game-starter-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      Download the Game Starter Code
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#create-a-new-project-folder" class="md-nav__link">
+    <span class="md-ellipsis">
+      Create a New Project Folder
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#move-the-game-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      Move the Game File
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#open-your-project-in-visual-studio-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      Open Your Project in Visual Studio Code
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#open-the-game-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      Open the Game File
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#run-the-game" class="md-nav__link">
+    <span class="md-ellipsis">
+      Run the Game
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modify-your-game" class="md-nav__link">
+    <span class="md-ellipsis">
+      Modify Your Game!
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Mini Lessons
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Mini Lessons
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Game Design
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            Game Design
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../game-design/coming_soon/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Coming Soon
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Pygame
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            Pygame
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../pygame/drawing-shapes/draw_shapes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Drawing Shapes
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../pygame/keyboard-input/keyboard_input/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Keyboard Input
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../pygame/colors/colors/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Colors
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../pygame/mouse-input/mouse_input/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Handling Mouse Input
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../pygame/sound-effects/coming_soon/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Sound Effects
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../pygame/background-music/coming_soon/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Background Music
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../pygame/images/coming_soon/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Displaying Images
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../pygame/animated-sprites/animated_sprites/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Animating Sprites
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../pygame/player-class/coming_soon/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Player Class
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../pygame/collision-detection/coming_soon/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Collision Detection
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../pygame/framerate-independence/framerate_independence/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Frame Independent Movement
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../pygame/parallax-scrolling/coming_soon/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Parallax Scrolling
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../pygame/full-screen/coming_soon/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Full Screen
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../pygame/physics/coming_soon/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Physics
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../pygame/particles/coming_soon/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Particles
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../pygame/publish-itch/coming_soon/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Publish on itch.io
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Python
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            Python
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../python/coming_soon/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Coming Soon
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Student Challenges
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Student Challenges
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../challeges/one-button-game/one_button/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    One Button Game
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Full Game Examples
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Full Game Examples
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../full-game-examples/breakout-game/coming_soon/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Breakout
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../full-game-examples/flappy-bird-game/coming_soon/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Flappy Bird
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../full-game-examples/pong-game/coming_soon/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Pong
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../full-game-examples/snake-game/coming_soon/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Snake
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../full-game-examples/curse-of-barnacle-briggs/barnacle-briggs/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Barnacle Briggs
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#download-the-game-starter-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      Download the Game Starter Code
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#create-a-new-project-folder" class="md-nav__link">
+    <span class="md-ellipsis">
+      Create a New Project Folder
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#move-the-game-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      Move the Game File
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#open-your-project-in-visual-studio-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      Open Your Project in Visual Studio Code
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#open-the-game-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      Open the Game File
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#run-the-game" class="md-nav__link">
+    <span class="md-ellipsis">
+      Run the Game
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modify-your-game" class="md-nav__link">
+    <span class="md-ellipsis">
+      Modify Your Game!
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+  <h1>Starter Game Template</h1>
+
+<p>This guide will help you set up your first game using Pygame! Following these steps, you can run your game and modify it to create something unique.</p>
+<h3 id="download-the-game-starter-code"><strong>Download the Game Starter Code</strong><a class="headerlink" href="#download-the-game-starter-code" title="Permanent link">&para;</a></h3>
+<p>Download the file <a href="../game.py"><code>game.py</code></a> and save it to your computer. This file contains the basic game loop and player movement to get you started.</p>
+<div style="display: flex; align-items: center; gap: 20px;">
+    <!-- Download Button -->
+
+    <div>
+
+    <a href="../game.py" download class="md-button md-button--primary">
+        ⬇ Download game.py
+    </a>
+
+    </div> 
+
+</div>
+
+<h3 id="create-a-new-project-folder"><strong>Create a New Project Folder</strong><a class="headerlink" href="#create-a-new-project-folder" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Choose an appropriate name for your game, such as <code>MyAwesomeGame</code>, <code>Asteroids</code>, or <code>SpaceRunner</code>. <ul>
+<li>Your project's folder name should not contain spaces or special characters. </li>
+<li>Use capital letters to separate words.</li>
+</ul>
+</li>
+<li>On your computer, create a new folder with your game's name. <ul>
+<li>This will be your project folder where all your game files and assets will be stored.</li>
+</ul>
+</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">What are Project Folders?</p>
+<p>A project folder helps you keep all your game files organized in one place. As your game grows, you’ll need more than just the <code>game.py</code> file. Your project folder will store:</p>
+<ul>
+<li><strong>Game Code:</strong> The Python files that run your game.</li>
+<li><strong>Images:</strong> Graphics like backgrounds, characters, and objects.</li>
+<li><strong>Sounds:</strong> Background music and sound effects.</li>
+<li><strong>Instructions/README:</strong> A file explaining how to play the game.</li>
+</ul>
+<p>Keeping everything in one folder makes finding and managing your game assets easier.</p>
+</div>
+<h3 id="move-the-game-file"><strong>Move the Game File</strong><a class="headerlink" href="#move-the-game-file" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Move <code>game.py</code> into your newly created project folder.</li>
+</ul>
+<p>As you start adding images and sounds, your project folder should evolve to look like this:</p>
+<div class="highlight"><pre><span></span><code>MyAwesomeGame/
+├── game.py           # Main game file
+├── assets/           # Folder for images and sounds
+│   ├── player.png    # Example player image
+│   ├── background.png # Example background
+│   ├── jump.wav      # Example sound effect
+</code></pre></div>
+<p>This structure keeps your project organized, making you less likely to encounter errors when referencing files.</p>
+<div class="admonition note">
+<p class="admonition-title">File Naming Best Practices</p>
+<p>When naming files in your project, always use <strong>lowercase letters (<code>a-z</code>)</strong> with <strong>underscores (<code>_</code>)</strong> between words. Filenames are case-sensitive, so be consistent!</p>
+<table>
+<thead>
+<tr>
+<th>✅ Good File Name</th>
+<th>❌ Bad File Name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>player_ship.png</code></td>
+<td><code>Player Ship.png</code> (spaces &amp; uppercase)</td>
+</tr>
+<tr>
+<td><code>laser_blast.wav</code></td>
+<td><code>Laser_blast.PNG</code> (inconsistent case)</td>
+</tr>
+</tbody>
+</table>
+<p>Keeping filenames lowercase and using underscores prevents errors in your code.</p>
+</div>
+<h3 id="open-your-project-in-visual-studio-code"><strong>Open Your Project in Visual Studio Code</strong><a class="headerlink" href="#open-your-project-in-visual-studio-code" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Open <strong>Visual Studio Code (VS Code)</strong>.</li>
+<li>Click on <strong>File &gt; Open Folder...</strong> and select your game project folder.</li>
+</ul>
+<p><em>Alt text: Screenshot of Visual Studio Code with the "Open Folder" option highlighted.</em></p>
+<h3 id="open-the-game-file"><strong>Open the Game File</strong><a class="headerlink" href="#open-the-game-file" title="Permanent link">&para;</a></h3>
+<ul>
+<li>In the <strong>Explorer</strong> panel on the left, find and click on <code>game.py</code> to open it.</li>
+</ul>
+<p><em>Alt text: Screenshot of Visual Studio Code showing <code>game.py</code> selected in the Explorer panel.</em></p>
+<h3 id="run-the-game"><strong>Run the Game</strong><a class="headerlink" href="#run-the-game" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Click the <strong>Run</strong> button at the top right.</li>
+<li>Or, use the keyboard shortcut:</li>
+<li><strong>Windows/Linux</strong>: <code>Ctrl+Shift+B</code></li>
+<li><strong>Mac</strong>: <code>Cmd+Shift+B</code></li>
+</ul>
+<p><em>Alt text: Screenshot of Visual Studio Code with the "Run" button highlighted.</em></p>
+<h3 id="modify-your-game"><strong>Modify Your Game!</strong><a class="headerlink" href="#modify-your-game" title="Permanent link">&para;</a></h3>
+<p>Now that you have everything set up, you can start modifying <code>game.py</code> to create your own unique game! </p>
+<p>Use the <code>Mini Lessons</code> to learn cool new tricks!</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": [], "search": "../../../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.c8b220af.min.js"></script>
+      
+    
+  </body>
+</html>
