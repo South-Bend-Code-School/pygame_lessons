@@ -64,14 +64,38 @@ jobs:
         run: |
           for file in dist/*.zip; do
             game_name=$(basename "$file" .zip)
-            upload_url=$(curl -s -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
-                          "https://api.github.com/repos/${{ github.repository }}/releases/tags/$game_name" | \
-                          jq -r '.upload_url' | sed 's/{?name,label}//')
+            
+            # Get release info
+            release_url="https://api.github.com/repos/${{ github.repository }}/releases/tags/$game_name"
+            release_info=$(curl -s -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" "$release_url")
+            
+            # Extract the release ID
+            release_id=$(echo "$release_info" | jq -r '.id')
+            
+            if [ "$release_id" == "null" ]; then
+              echo "Error: Release ID for $game_name not found!"
+              exit 1
+            fi
 
+            # Check if the asset already exists
+            asset_id=$(echo "$release_info" | jq -r '.assets[] | select(.name=="'"$(basename "$file")"'") | .id')
+
+            if [ -n "$asset_id" ] && [ "$asset_id" != "null" ]; then
+              echo "Deleting existing asset: $(basename "$file")"
+              curl -X DELETE -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
+                  "https://api.github.com/repos/${{ github.repository }}/releases/assets/$asset_id"
+              sleep 2  # Wait for GitHub to process deletion
+            fi
+
+            # Get upload URL
+            upload_url=$(echo "$release_info" | jq -r '.upload_url' | sed 's/{?name,label}//')
+
+            # Upload the new asset
+            echo "Uploading new asset: $(basename "$file")"
             curl -X POST -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
-                 -H "Content-Type: application/zip" \
-                 --data-binary @"$file" \
-                 "$upload_url?name=$(basename "$file")"
+                -H "Content-Type: application/zip" \
+                --data-binary @"$file" \
+                "$upload_url?name=$(basename "$file")"
           done
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
