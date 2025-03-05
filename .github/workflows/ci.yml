@@ -29,12 +29,14 @@ jobs:
       - run: mkdocs gh-deploy --force
 
         # Create ZIP files for each game/example
+        # for folder in docs/full-game-examples/* docs/pygame/*; do
       - name: Create ZIP files
         run: |
           mkdir -p dist
-          for folder in docs/full-game-examples/* docs/pygame/*; do
+          for folder in docs/full-game-examples/*; do
             if [ -d "$folder" ]; then
-              zip -r "dist/$(basename "$folder").zip" "$folder"
+              game_name=$(basename "$folder")
+              (cd "$folder" && zip -r "../../dist/$game_name.zip" .)
             fi
           done
 
