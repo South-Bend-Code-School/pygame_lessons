@@ -1,17 +1,47 @@
 # Drawing Shapes in Pygame
 
-<div style="display: flex; align-items: center; gap: 20px;">
-    <!-- Download Button -->
-    
-    <div>
+<style>
+    .container {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+        text-align: center;
+    }
 
-    <a href="../draw_shapes.py" download class="md-button md-button--primary">
-        ⬇ Download draw_shapes.py
-    </a>
-   <span>Experiment with it yourself!</span>
-    </div> 
+    .image-container, .button-container {
+        flex: 1 1 100%; /* Default: Full width */
+    }
+
+    .image-container img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    @media (min-width: 768px) { /* Side-by-side on larger screens */
+        .container {
+            flex-wrap: nowrap; /* Prevent wrapping */
+            text-align: left; /* Align text properly */
+        }
+        .image-container, .button-container {
+            flex: 0 1 auto; /* Side by side */
+        }
+    }
+</style>
+
+<div class="container">
     <!-- Image -->
-    <img src="../draw_all_shapes.png" alt="All Shapes" width="350">
+    <div class="image-container">
+        <img src="../draw_all_shapes.png" alt="All Shapes" width="350">
+    </div>
+
+    <!-- Download Button -->
+    <div class="button-container">
+        <a href="../draw_shapes.py" download class="md-button md-button--primary">
+            ⬇ Download draw_shapes.py
+        </a>
+    </div>
 </div>
 
 ### The Pygame Coordinate System
