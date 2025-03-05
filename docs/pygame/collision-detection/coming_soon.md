@@ -1,4 +1,4 @@
-# Coming Soon
+# Collision Detection Mini Lesson Coming Soon
 
 In the meantime, play our game.
 

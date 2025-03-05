@@ -19,6 +19,8 @@ nav:
     - Installation: getting-started/00-Installation/Installation.md
     - Starter Game Template: getting-started/01-Starter-Game-Template/starter_game_template.md
   - Mini Lessons:
+    - Game Design:
+      - Coming Soon: game-design/coming_soon.md
     - Pygame:
       - Drawing Shapes: pygame/drawing-shapes/draw_shapes.md
       - Keyboard Input: pygame/keyboard-input/keyboard_input.md
@@ -37,7 +39,7 @@ nav:
       - Particles: pygame/particles/coming_soon.md
       - Publish on itch.io: pygame/publish-itch/coming_soon.md
     - Python:
-      - Coming Soon: python/p01-Indendation/indendation.md
+      - Coming Soon: python/coming_soon.md
   - Student Challenges:
     - One Button Game: challeges/one-button-game/one_button.md
   - Full Game Examples:

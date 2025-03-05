@@ -1,4 +1,4 @@
-# Coming Soon
+# Particle Effects Mini Lesson Coming Soon
 
 In the meantime, play our game.
 

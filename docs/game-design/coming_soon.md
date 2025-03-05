@@ -1,4 +1,4 @@
-# Player Class Mini Lesson Coming Soon
+# Game Design Mini Lessons Coming Soon
 
 In the meantime, play our game.
 

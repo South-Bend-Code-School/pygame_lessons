@@ -1,4 +1,4 @@
-# Coming Soon
+# Full Screen Mini Lesson Coming Soon
 
 In the meantime, play our game.
 
